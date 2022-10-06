@@ -19,11 +19,10 @@ jobs:
           git config --global user.name "${{ github.actor }}"
       - run: npm install
       - run: PUBLIC_URL=/${{ github.event.repository.name }} npm run build
-      - run: mkdir -p ./gh-pages
+      - run: mkdir ./gh-pages
       - run: git init -b gh-pages ./gh-pages 
       - run : cd ./gh-pages
-      - run : git remote add -t gh-pages origin \
-          https://git${{ github.token }}@github.com/${{ github.repository }}.git
+      - run : git remote add -t gh-pages origin https://git${{ github.token }}@github.com/${{ github.repository }}.git
       - run: | 
           git pull origin gh-pages
           rm -rf ./*
