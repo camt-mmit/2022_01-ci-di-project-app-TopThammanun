@@ -22,7 +22,7 @@ jobs:
       - run: mkdir ./gh-pages
       - run: git init -b gh-pages ./gh-pages 
       - run : cd ./gh-pages
-      - run : git remote add -t gh-pages origin https://git${{ github.token }}@github.com/${{ github.repository }}.git
+      - run : git remote add -t gh-pages origin \ https://git${{ github.token }}@github.com/${{ github.repository }}.git
       - run: | 
           git pull origin gh-pages
           rm -rf ./*
