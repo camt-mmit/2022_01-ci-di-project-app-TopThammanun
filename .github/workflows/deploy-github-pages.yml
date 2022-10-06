@@ -20,8 +20,8 @@ jobs:
       - run: npm install
       - run: PUBLIC_URL=/${{ github.event.repository.name }} npm run build
       - run: mkdir -p ./gh-pages
+      - run: git init -b gh-pages ./gh-pages 
       - run: | 
-          git init -b gh-pages ./gh-pages 
           cd ./gh-pages
           git remote add -t gh-pages origin \
           https://git${{ github.token }}@github.com/${{ github.repository }}.git
