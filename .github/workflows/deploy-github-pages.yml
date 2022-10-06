@@ -17,18 +17,18 @@ jobs:
       - run: |
           git config --global user.email "${{ github.event.pusher.email }}"
           git config --global user.name "${{ github.actor }}"
-      - run: mkdir -p ./build/gh-pages
-      - run: git init -b gh-pages ./build/gh-pages 
+      - run: mkdir -p ./gh-pages
+      - run: git init -b gh-pages ./gh-pages 
       - run: |
-          cd ./build/gh-pages
+          cd ./gh-pages
           git remote add -t gh-pages origin https://github.com/camt-mmit/2022_01-ci-cd-my-react-TopThammanun
       - run: git pull origin
       - run: cp ./build/index.html ./build/404.html
       - run: |
-          rm -rf ./build/gh-pages/*
-          cp -rf ./build/* ./build/gh-pages/
+          rm -rf ./gh-pages/*
+          cp -rf ./build/* ./gh-pages/
       - run : |
-          cd ./build/gh-pages
+          cd ./gh-pages
           git add .
           git commit -m "Manually commit"
           git push origin gh-pages
