@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Go <code>Workflow</code> Test Run merge-to master-01 11111 222222 655555 9999
+          Go <code>Workflow</code> Test Run merge-to master-01 only feauture-01
         </p>
         <a
           className="App-link"
