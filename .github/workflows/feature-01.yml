@@ -17,7 +17,6 @@ jobs:
       - run: |
           git config --global user.email "${{ github.event.pusher.email }}"
           git config --global user.name "${{ github.actor }}"
-      - run: npm install -g yarn
-      - run: yarn install --frozen-lockfile
-      - run: yarn run test:ci
+      - run: npm ci
+      - run: npm run test
       - run: git fetch --unshallow
