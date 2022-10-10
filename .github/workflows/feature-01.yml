@@ -5,7 +5,7 @@ on:
     branches: 
       - feauture-01
 jobs:
-  feature-01:
+  ci-feauture-01:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
