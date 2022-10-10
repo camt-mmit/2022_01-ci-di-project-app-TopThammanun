@@ -22,4 +22,4 @@ jobs:
       - run: |
           git fetch --unshallow
           git checkout master
-          merge feauture-01
+          git merge feauture-01
