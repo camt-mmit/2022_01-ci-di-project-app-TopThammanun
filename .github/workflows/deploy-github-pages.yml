@@ -31,7 +31,7 @@ jobs:
           git add .
           git commit -m "Manually commit"
           git push origin gh-pages
-          cd ..
+          cd .. 
   push-docker-hub:
     runs-on: ubuntu-latest
     steps:
@@ -47,11 +47,11 @@ jobs:
         with:
           node-version: '16'
       - name: Install dependencies
-        run: npm install
+        run: yarn install
       - name: Build project
-        run: npm run build
+        run: yarn run build
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2s
+        uses: docker/setup-buildx-action@v2
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
