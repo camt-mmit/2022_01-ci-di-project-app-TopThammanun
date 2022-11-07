@@ -1,8 +1,14 @@
-# syntax=docker/dockerfile:1
-FROM alpine
-RUN \
-apk update && \
-apk add nginx
-COPY ./nginx /
-COPY ./build /var/lib/nginx/html/
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+FROM node:18
+
+RUN mkdir -p /usr/my-app/client
+
+WORKDIR /usr/my-app/client
+
+COPY . .
+
+RUN npm install
+
+CMD ["npm","run","start"]
+
+
+
