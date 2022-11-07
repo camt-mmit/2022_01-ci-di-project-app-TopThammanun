@@ -22,9 +22,7 @@ function Users() {
             }
         };
         getData();
-    }, []);
-
-    console.log(data);
+    }, [token]);
 
     return (
         <div className="App">

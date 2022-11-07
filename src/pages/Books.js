@@ -22,7 +22,7 @@ function Books() {
             }
         };
         getData();
-    }, []);
+    }, [token]);
 
     return (
         <div className="App">
